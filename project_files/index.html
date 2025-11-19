@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker - Daily Wellness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Daily Habits</h1>
+            <p class="subtitle">Build your best self, one day at a time</p>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-label">
+                <span>Today's Progress</span>
+                <span class="progress-text">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="add-habit-section">
+            <input type="text" id="habitName" placeholder="Habit name (e.g., Read Book)" maxlength="30">
+            <input type="text" id="habitEmoji" placeholder="Emoji (e.g., 📚)" maxlength="2">
+            <button id="addHabitBtn" class="add-btn">+ Add Habit</button>
+        </div>
+
+        <div id="habitsContainer" class="habits-container"></div>
+
+        <div id="congratsMessage" class="congrats-message hidden">
+            <div class="congrats-content">
+                <div class="congrats-emoji">🎉</div>
+                <h2>Congratulations!</h2>
+                <p>You've completed all your habits for today!</p>
+                <p class="congrats-streak">Keep up the amazing work! 🌟</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

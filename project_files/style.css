@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #424242;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #5e35b1;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #7e57c2;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.progress-section {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #5e35b1;
+}
+
+.progress-text {
+    color: #7e57c2;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e8eaf6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7e57c2, #9575cd);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.add-habit-section {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px 16px;
+    border: 2px solid #e8eaf6;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #7e57c2;
+}
+
+#habitEmoji {
+    flex: 0 0 80px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.add-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #7e57c2, #9575cd);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(126, 87, 194, 0.3);
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(126, 87, 194, 0.4);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+.habits-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.habit-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.habit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.habit-emoji {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e8eaf6, #f3e5f5);
+    border-radius: 15px;
+}
+
+.habit-info {
+    flex: 1;
+}
+
+.habit-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #424242;
+    margin-bottom: 5px;
+}
+
+.habit-streak {
+    color: #ff6f00;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.complete-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #81c784, #66bb6a);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    box-shadow: 0 2px 8px rgba(102, 187, 106, 0.3);
+}
+
+.complete-btn:hover {
+    transform: scale(1.05);
+}
+
+.complete-btn:active {
+    transform: scale(0.95);
+}
+
+.complete-btn.completed {
+    background: linear-gradient(135deg, #4caf50, #43a047);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.delete-btn {
+    padding: 8px 12px;
+    background: #ffcdd2;
+    color: #c62828;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ef9a9a;
+}
+
+.congrats-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.congrats-message.hidden {
+    display: none;
+}
+
+.congrats-content {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s ease;
+}
+
+.congrats-emoji {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 0.6s ease infinite;
+}
+
+.congrats-content h2 {
+    color: #5e35b1;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.congrats-content p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.congrats-streak {
+    color: #ff6f00;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #9575cd;
+}
+
+.empty-state-emoji {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.empty-state-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .add-habit-section {
+        flex-direction: column;
+    }
+    
+    input, #habitEmoji, .add-btn {
+        width: 100%;
+        flex: none;
+    }
+}
